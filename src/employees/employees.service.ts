@@ -16,10 +16,7 @@ export class EmployeesService {
   }
 
   async findAll(role?: 'INTERN' | 'ENGINEER' | 'ADMIN') {
-    if(role) {
-      return this.databaseService.employee.findMany({where: { role }})
-    }
-    return this.databaseService.employee.findMany();
+    return this.databaseService.employee.findMany({where: { role }})
   }
 
   async findOne(id: number) {
